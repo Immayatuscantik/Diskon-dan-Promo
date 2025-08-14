@@ -27,9 +27,18 @@ class User extends CI_Controller {
 
     // Detail flyer
     public function flyer($id_flyer)
-    {
-        $this->load->model('User_model');
-        $data['flyer'] = $this->User_model->get_flyer_by_id($id_flyer);
-        $this->load->view('user/flyer', $data);
-    }
+{
+    $this->load->model('User_model');
+
+    // Ambil data flyer dulu
+    $flyer = $this->User_model->get_flyer_by_id($id_flyer);
+
+    // Simpan ke array data
+    $data['flyer'] = $flyer;
+    $data['id_kategori'] = $flyer->id_kategori;
+
+    // Kirim ke view
+    $this->load->view('user/flyer', $data);
+}
+
 }

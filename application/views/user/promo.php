@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/promo.css'); ?>">
 </head>
 <body>
+  <a href="<?= site_url('user'); ?>" class="btn btn-secondary mb-3">Kembali</a>
     <h2><?= $kategori->nama_kategori; ?></h2>
     <div class="grid">
         <?php foreach ($flyer as $f): ?>
