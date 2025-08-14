@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $promo->flyer; ?></title>
+    <title><?= $flyer->nama_flyer; ?></title>
 </head>
 <body>
-    <h2><?= $promo->flayer; ?></h2>
+    <h2><?= $flyer->nama_flyer; ?></h2>
     <img src="<?= base_url('uploads/flyer/'.$flyer->gambar); ?>" width="500">
-    <p><?= $flyer->deskripsi; ?></p>
 </body>
 </html>

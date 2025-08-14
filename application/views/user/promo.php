@@ -13,7 +13,7 @@
                 <img src="<?= base_url('uploads/flyer/'.$f->gambar); ?>" alt="<?= $f->nama_flyer; ?>">
                 <p><?= $f->nama_flyer; ?></p>
                 <p><?= $f->nama_kategori; ?></p>
-                <a href="<?= site_url('kategori/detail/'.$f->id_flyer); ?>" class="detail-btn">Detail</a>
+                <a href="<?= site_url('user/flyer/'.$f->id_flyer); ?>" class="detail-btn">Detail</a>
             </div>
         <?php endforeach; ?>
     </div>

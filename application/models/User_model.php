@@ -24,4 +24,8 @@ class User_model extends CI_Model {
         $this->db->where('flyer.id_kategori', $id_kategori);
         return $this->db->get()->result();
     }
+    public function get_flyer_by_id($id_flyer)
+    {
+    return $this->db->get_where('flyer', ['id_flyer' => $id_flyer])->row();
+    }
 }

@@ -26,10 +26,10 @@ class User extends CI_Controller {
     }
 
     // Detail flyer
-    public function detail($id_flyer)
+    public function flyer($id_flyer)
     {
-        $this->load->model('Flyer_model');
-        $data['flyer'] = $this->Flyer_model->get_by_id($id_flyer);
-        $this->load->view('promo_detail', $data);
+        $this->load->model('User_model');
+        $data['flyer'] = $this->User_model->get_flyer_by_id($id_flyer);
+        $this->load->view('user/flyer', $data);
     }
 }
