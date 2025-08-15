@@ -3,13 +3,12 @@
 
 <head>
  <title>Tambah Flyer</title>
- <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
+ <link rel="stylesheet" href="<?= base_url('assets/css/tambah_promo.css'); ?>">
 </head>
 
 <body class="p-4">
  <div class="container">
-  <h2>Tambah Flyer</h2>
-  <a href="<?= site_url('admin'); ?>" class="btn btn-secondary mb-3">Kembali</a>
+  <h2>Tambah/Edit Promo</h2>
 
   <?php if ($this->session->flashdata('error')): ?>
   <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
@@ -17,7 +16,7 @@
 
   <?= form_open_multipart('admin/tambah'); ?>
   <div class="form-group mb-2">
-   <label>Nama Flyer</label>
+   <label>Judul Promo</label>
    <input type="text" name="nama_flyer" class="form-control" required>
   </div>
 
@@ -32,17 +31,17 @@
   </div>
 
   <div class="form-group mb-2">
-   <label>Gambar</label>
+   <label>Flyer</label>
    <input type="file" name="gambar" class="form-control" required>
   </div>
 
   <div class="form-group mb-2">
-   <label>tgl_mulai</label>
+   <label>Tanggal Mulai</label>
    <input type="date" name="tgl_mulai" class="form-control" required>
   </div>
 
   <div class="form-group mb-2">
-   <label>tgl_selesai</label>
+   <label>Tanggal Selesai</label>
    <input type="date" name="tgl_selesai" class="form-control" required>
   </div>
 
@@ -55,6 +54,7 @@
   </div>
 
   <button type="submit" class="btn btn-success">Simpan</button>
+  <a href="<?= site_url('flyer'); ?>" class="btn btn-secondary">Batal</a>
   <?= form_close(); ?>
  </div>
 </body>

@@ -3,14 +3,12 @@
 
 <head>
  <title>Edit Flyer</title>
- <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
+ <link rel="stylesheet" href="<?= base_url('assets/css/tambah_promo.css'); ?>">
 </head>
 
 <body class="p-4">
  <div class="container">
   <h2>Edit Flyer</h2>
-  <a href="<?= site_url('admin'); ?>" class="btn btn-secondary mb-3">Kembali</a>
-  <a href="<?= site_url('admin/edit/'.$flyer->id_flyer) ?>">Edit</a>
 
   <?php if ($this->session->flashdata('error')): ?>
   <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
@@ -18,7 +16,7 @@
 
   <?= form_open_multipart('admin/edit/' . $flyer->id_flyer); ?>
   <div class="form-group mb-2">
-   <label>Nama Flyer</label>
+   <label>Judul Promo</label>
    <input type="text" name="nama_flyer" class="form-control" value="<?= $flyer->nama_flyer; ?>" required>
   </div>
 
@@ -35,7 +33,7 @@
   </div>
 
   <div class="form-group mb-2">
-   <label>Gambar</label><br>
+   <label>Flyer</label><br>
    <?php if ($flyer->gambar): ?>
    <img src="<?= base_url('uploads/flyer/' . $flyer->gambar); ?>" width="100" class="mb-2">
    <?php endif; ?>
@@ -43,12 +41,12 @@
   </div>
 
   <div class="form-group mb-2">
-   <label>tgl_mulai</label>
+   <label>Tanggal Mulai</label>
    <input type="date" name="tgl_mulai" class="form-control" value="<?= $flyer->tgl_mulai; ?>" required>
   </div>
 
   <div class="form-group mb-2">
-   <label>tgl_selesai</label>
+   <label>Tanggal Selesai</label>
    <input type="date" name="tgl_selesai" class="form-control" value="<?= $flyer->tgl_selesai; ?>" required>
   </div>
 
