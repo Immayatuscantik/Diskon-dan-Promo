@@ -19,16 +19,11 @@
 </nav>
 
 <div class="container mt-3">
-    <!-- Tombol Kembali -->
-    <a href="javascript:history.back()" class="btn btn-outline-primary mb-3">
-        ← Kembali
-    </a>
-
+    <div class="row">
     <!-- Konten Halaman -->
     <?php if (isset($contents)) echo $contents; ?>
 </div>
-
-   <a class="navbar-brand" href="<?php echo base_url('dashboard'); ?>">Admin Panel</a>
+   <div class="container">
    <ul class="navbar-nav ms-auto">
     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('kategori'); ?>">Kategori</a></li>
     <li class="nav-item"><a class="nav-link text-danger" href="<?php echo base_url('auth/logout'); ?>">Logout</a></li>
