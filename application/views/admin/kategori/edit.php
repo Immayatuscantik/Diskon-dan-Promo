@@ -3,18 +3,12 @@
 
 <head>
  <title>Edit Kategori</title>
- <link rel="stylesheet" href="<?= base_url('assets/css/admin.css') ?>">
+ <link rel="stylesheet" href="<?= base_url('assets/css/tambah_kategori.css') ?>">
 </head>
 
-<?php $this->load->view('layout/header'); ?>
-
-<h1>Halaman Kategori</h1>
-
-<?php $this->load->view('layout/footer'); ?>
-
 <body>
- <h2>Edit Kategori</h2>
- <form method="post">
+  <form method="post">
+   <h2>Tambah/Edit Kategori</h2>
   <label>Nama Kategori</label>
   <input type="text" name="nama_kategori" value="<?= $kategori->nama_kategori ?>" required>
   <label>Nomor Urut</label>

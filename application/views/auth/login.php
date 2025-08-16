@@ -3,11 +3,10 @@
 
 <head>
  <title>Login Admin</title>
+ <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/login.css'); ?>">
 </head>
 
 <body>
- <h2>Login Admin</h2>
-
  <!-- Pesan error jika login gagal -->
  <?php if(!empty($error)) : ?>
  <p style="color:red;"><?php echo $error; ?></p>

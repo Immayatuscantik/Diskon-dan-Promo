@@ -3,12 +3,12 @@
 
 <head>
  <title>Tambah Kategori</title>
- <link rel="stylesheet" href="<?= base_url('assets/css/admin.css') ?>">
+ <link rel="stylesheet" href="<?= base_url('assets/css/tambah_kategori.css') ?>">
 </head>
 
 <body>
- <h2>Tambah Kategori</h2>
- <form method="post">
+  <form method="post">
+  <h2>Tambah/Edit Kategori</h2>
   <label>Nama Kategori</label>
   <input type="text" name="nama_kategori" required>
     <label>Nomor Urut</label>
@@ -20,7 +20,7 @@
     <option value="Tidak Aktif">Tidak Aktif</option>
    </select>
   <button type="submit">Simpan</button>
-  <a href="<?= site_url('kategori'); ?>" class="btn btn-secondary">Kembali</a>
+  <a href="<?= site_url('kategori'); ?>" class="btn btn-secondary">Batal</a>
   </select>
   <br><br>
   <?php if ($this->session->flashdata('error')): ?>
