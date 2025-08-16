@@ -13,14 +13,6 @@ class Admin extends CI_Controller {
         $this->load->helper(['url', 'form']);
     }
 
-    // Dashboard
-    public function dashboard()
-    {
-        $data['total_flyer'] = $this->Flyer_model->count_all();
-        $data['total_kategori'] = $this->Kategori_model->count_all();
-        $this->load->view('admin/dashboard', $data);
-    }
-
     // List flyer
     public function index()
     {
