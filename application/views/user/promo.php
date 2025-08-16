@@ -52,6 +52,7 @@ var swiper = new Swiper('.promo-banner', {
 });
 </script>
 
+
 <style>
 .swiper-slide {
     width: 300px; /* lebar kartu */
