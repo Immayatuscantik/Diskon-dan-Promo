@@ -13,7 +13,14 @@ class User extends CI_Controller {
     // Halaman Kategori
     public function index()
     {
-        $data['kategori'] = $this->User_model->get_all_user();
+        $kategori = $this->User_model->get_all_user();
+
+        // tambahkan thumbnail dari flyer ke setiap kategori
+        foreach ($kategori as &$k) {
+            $k->thumbnail = $this->User_model->get_thumbnail_by_kategori($k->id_kategori);
+        }
+
+        $data['kategori'] = $kategori;
         $this->load->view('user/kategori', $data);
     }
 
@@ -27,18 +34,14 @@ class User extends CI_Controller {
 
     // Detail flyer
     public function flyer($id_flyer)
-{
-    $this->load->model('User_model');
+    {
+        // Ambil data flyer dulu
+        $flyer = $this->User_model->get_flyer_by_id($id_flyer);
 
-    // Ambil data flyer dulu
-    $flyer = $this->User_model->get_flyer_by_id($id_flyer);
+        $data['flyer'] = $flyer;
+        $data['id_kategori'] = $flyer->id_kategori;
 
-    // Simpan ke array data
-    $data['flyer'] = $flyer;
-    $data['id_kategori'] = $flyer->id_kategori;
-
-    // Kirim ke view
-    $this->load->view('user/flyer', $data);
-}
-
+        // Kirim ke view
+        $this->load->view('user/flyer', $data);
+    }
 }

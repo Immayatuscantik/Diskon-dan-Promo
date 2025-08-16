@@ -2,16 +2,27 @@
 <html>
 <head>
     <title>Kategori</title>
-    <!-- Panggil CSS -->
+    <!-- Panggil CSS eksternal -->
     <link rel="stylesheet" href="<?= base_url('assets/kategori.css'); ?>">
 </head>
 <body>
+
+<div class="container">
     <h2>Kategori</h2>
-    <?php foreach ($kategori as $k): ?>
-        <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>" 
-           class="btn <?= ($k->nama_kategori == 'Promo Pemeriksaan Umum') ? 'btn-green' : 'btn-grey'; ?>">
-           <?= $k->nama_kategori; ?>
-        </a>
-    <?php endforeach; ?>
+    
+    <div class="kategori-grid">
+        <?php foreach ($kategori as $k): ?>
+            <div class="card">
+                <img src="<?= base_url('uploads/flyer/'.$k->thumbnail) ?>" 
+                     alt="<?= $k->nama_kategori ?>">
+
+                <h3><?= $k->nama_kategori; ?></h3>
+                <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>">Lihat Promo</a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+</div>
+
 </body>
 </html>
