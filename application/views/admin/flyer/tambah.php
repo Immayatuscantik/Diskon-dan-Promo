@@ -54,7 +54,7 @@
   </div>
 
   <button type="submit" class="btn btn-success">Simpan</button>
-  <a href="<?= site_url('flyer'); ?>" class="btn btn-secondary">Batal</a>
+  <a href="<?= site_url('admin'); ?>" class="btn btn-secondary">Batal</a>
   <?= form_close(); ?>
  </div>
 </body>

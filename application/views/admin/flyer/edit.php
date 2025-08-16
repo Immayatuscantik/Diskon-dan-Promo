@@ -58,6 +58,13 @@
    </select>
   </div>
 
+  <br><br>
+    <?php if ($this->session->flashdata('error')): ?>
+    <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
+    <?php endif; ?>
+    <a href="<?= site_url('admin'); ?>" class="btn btn-secondary">Batal</a>
+    <br><br>
+
   <button type="submit" class="btn btn-success">Update</button>
   <?= form_close(); ?>
  </div>
