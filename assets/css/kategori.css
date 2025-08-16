@@ -126,3 +126,38 @@ h2 {
     background-color: #f8d7da;
     color: #721c24;
 }
+
+.aksi-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.aksi-btn {
+    background: none;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.aksi-btn:hover {
+    background: #e0e0e0;
+}
+
+.aksi-btn img {
+    width: 36px;
+    height: 36px;
+    display: block;
+}
+
+.aksi-separator {
+    display: inline-block;
+    width: 3px;
+    height: 40px;
+    background: #bbb;
+    border-radius: 2px;
+}

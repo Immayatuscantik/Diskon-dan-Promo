@@ -19,9 +19,10 @@
     <option value="Aktif">Aktif</option>
     <option value="Tidak Aktif">Tidak Aktif</option>
    </select>
-  <button type="submit">Simpan</button>
-  <a href="<?= site_url('kategori'); ?>" class="btn btn-secondary">Batal</a>
-  </select>
+  <div class="form-actions">
+  <button type="submit" class="btn btn-success">Simpan</button>
+  <a href="<?= site_url('kategori'); ?>" class="btn btn-cancel">Batal</a>
+  </div>
   <br><br>
   <?php if ($this->session->flashdata('error')): ?>
   <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>

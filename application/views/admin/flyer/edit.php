@@ -62,13 +62,12 @@
     <?php if ($this->session->flashdata('error')): ?>
     <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
     <?php endif; ?>
-    <a href="<?= site_url('admin'); ?>" class="btn btn-secondary">Batal</a>
-    <br><br>
-
-  <button type="submit" class="btn btn-success">Update</button>
-  <?= form_close(); ?>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-success">Update</button>
+        <a href="<?= site_url('admin'); ?>" class="btn btn-cancel">Batal</a>
+    </div>
+    <?= form_close(); ?>
  </div>
  
 </body>
-
 </html>

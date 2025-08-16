@@ -15,7 +15,7 @@
     </div>
     <div class="container">
         <h2>Kelola Promo dan Diskon</h2>
-        <a href="<?= site_url('admin/tambah'); ?>" class="btn btn-primary mb-3">+ Tambah</a>
+        <a href="<?= site_url('admin/tambah'); ?>" class="btn btn-primary" style="margin-bottom:16px;display:inline-block;">+ Tambah</a>
 
         <?php if ($this->session->flashdata('error')): ?>
             <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
@@ -51,9 +51,14 @@
                                     <span class="text-muted">Tidak ada gambar</span>
                                 <?php endif; ?>
                             </td>
-                            <td>
-                                <a href="<?= base_url('index.php/admin/edit/'.$f->id_flyer) ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="<?= base_url('index.php/admin/hapus/'.$f->id_flyer) ?>" onclick="return confirm('Yakin ingin menghapus promo ini?');" class="btn btn-danger btn-sm">Hapus</a>
+                            <td class="aksi-cell">
+                                <a href="<?= base_url('index.php/admin/hapus/'.$f->id_flyer) ?>" onclick="return confirm('Yakin ingin menghapus promo ini?');" class="aksi-btn">
+                                    <img src="<?= base_url('assets/icons/trash.png'); ?>" alt="Hapus" width="44" height="44">
+                                </a>
+                                <span class="aksi-separator"></span>
+                                <a href="<?= base_url('index.php/admin/edit/'.$f->id_flyer) ?>" class="aksi-btn">
+                                    <img src="<?= base_url('assets/icons/edit.png'); ?>" alt="Edit" width="44" height="44">
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

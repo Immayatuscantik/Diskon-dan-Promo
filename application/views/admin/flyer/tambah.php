@@ -53,8 +53,10 @@
    </select>
   </div>
 
-  <button type="submit" class="btn btn-success">Simpan</button>
-  <a href="<?= site_url('admin'); ?>" class="btn btn-secondary">Batal</a>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-success">Simpan</button>
+    <a href="<?= site_url('admin'); ?>" class="btn btn-cancel">Batal</a>
+  </div>
   <?= form_close(); ?>
  </div>
 </body>
