@@ -29,7 +29,7 @@ class Auth extends CI_Controller {
                     'logged_in' => TRUE
                 ]);
 
-                redirect('admin/dashboard');
+                redirect('kategori');
             } else {
                 $data['error'] = 'Username atau password salah';
                 $this->load->view('auth/login', $data);
