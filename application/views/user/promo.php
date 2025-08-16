@@ -8,7 +8,7 @@
 <body>
 
 <div class="container my-4">
-    <a href="<?= site_url('user'); ?>" class="btn btn-secondary mb-3">← Kembali</a>
+    <a href="<?= site_url('user'); ?>" class="btn btn-secondary mb-3">Kembali</a>
     <h2 class="mb-4 text-center"><?= $kategori->nama_kategori; ?></h2>
 
 <div class="swiper-container promo-banner">

@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Kategori</title>
-    <!-- Panggil CSS eksternal -->
     <link rel="stylesheet" href="<?= base_url('assets/kategori.css'); ?>">
 </head>
 <body>
@@ -17,7 +16,7 @@
                      alt="<?= $k->nama_kategori ?>">
 
                 <h3><?= $k->nama_kategori; ?></h3>
-                <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>">Lihat Promo</a>
+                <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>" class="btn">Lihat Promo</a>
             </div>
         <?php endforeach; ?>
     </div>
