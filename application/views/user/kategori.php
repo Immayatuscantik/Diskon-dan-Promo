@@ -8,8 +8,9 @@
 <body>
 
 <div class="container">
-    <h2>Kategori</h2>
-    
+    <h2 style="text-align:center;">Kategori</h2>
+
+    <!-- wrapper flex -->
     <div class="kategori-grid">
         <?php foreach ($kategori as $k): ?>
             <div class="card">
@@ -17,11 +18,11 @@
                      alt="<?= $k->nama_kategori ?>">
 
                 <h3><?= $k->nama_kategori; ?></h3>
+                <p>Klik untuk lihat promo</p>
                 <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>">Lihat Promo</a>
             </div>
         <?php endforeach; ?>
     </div>
-
 </div>
 
 </body>
