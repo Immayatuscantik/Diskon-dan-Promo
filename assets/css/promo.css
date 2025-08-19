@@ -1,128 +1,159 @@
 /* Reset dan font */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f8f9fa;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	background-color: #f8f9fa;
 }
 
 /* Sidebar */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 180px;
-    background-color: #f1f1f1;
-    padding-top: 20px;
-    border-right: 1px solid #ddd;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 180px;
+	background-color: #f1f1f1;
+	padding-top: 20px;
+	border-right: 1px solid #ddd;
 }
 
 .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .sidebar ul li a {
-    display: block;
-    padding: 10px 15px;
-    color: #333;
-    text-decoration: none;
-    transition: 0.3s;
+	display: block;
+	padding: 10px 15px;
+	color: #333;
+	text-decoration: none;
+	transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background-color: #ddd;
+	background-color: #ddd;
 }
 
 .sidebar ul li a.active {
-    background-color: #ccc;
-    font-weight: bold;
+	background-color: #ccc;
+	font-weight: bold;
 }
 
 /* Container */
 .container {
-    margin-left: 200px;
-    padding: 20px;
+	margin-left: 200px;
+	padding: 20px;
 }
 
 /* Judul Halaman */
 h2 {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 /* Tombol */
 .btn {
-    float: right;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 14px;
-    cursor: pointer;
+	float: right;
+	padding: 8px 12px;
+	border: none;
+	border-radius: 4px;
+	text-decoration: none;
+	font-size: 14px;
+	cursor: pointer;
 }
 
 .btn-primary {
-    background-color: #d8ddd9;
-    color: rgb(4, 4, 4);
+	background-color: #d8ddd9;
+	color: rgb(4, 4, 4);
 }
 
 .btn-primary:hover {
-    background-color: #218838;
+	background-color: #218838;
 }
 
 .btn-warning {
-    background-color: #ffc107;
-    color: black;
+	background-color: #ffc107;
+	color: black;
 }
 
 .btn-warning:hover {
-    background-color: #e0a800;
+	background-color: #e0a800;
 }
 
 .btn-danger {
-    background-color: #dc3545;
-    color: white;
+	background-color: #dc3545;
+	color: white;
 }
 
 .btn-danger:hover {
-    background-color: #c82333;
+	background-color: #c82333;
 }
 
 /* Tabel */
 .table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+	width: 100%;
+	border-collapse: collapse;
+	background-color: white;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
-.table th, .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+.table th,
+.table td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: center;
 }
 
 .table th {
-    background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 
 .table img {
-    border-radius: 4px;
+	border-radius: 4px;
 }
 
 /* Alert */
 .alert {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
+	padding: 10px;
+	margin-bottom: 15px;
+	border-radius: 4px;
 }
 
 .alert-danger {
-    background-color: #f8d7da;
-    color: #721c24;
+	background-color: #f8d7da;
+	color: #721c24;
+}
+
+.aksi-cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+
+.aksi-btn {
+	background: none;
+	border: none;
+	padding: 0 4px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.aksi-btn img {
+	display: block;
+	width: 24px;
+	height: 24px;
+}
+
+.aksi-separator {
+	display: inline-block;
+	width: 1px;
+	height: 24px;
+	background: #888;
+	margin: 0 4px;
 }

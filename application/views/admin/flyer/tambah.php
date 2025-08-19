@@ -8,17 +8,25 @@
 
 <body class="p-4">
  <div class="container">
-  <h2>Tambah/Edit Promo</h2>
+  <h2>Tambah Promo</h2>
 
   <?php if ($this->session->flashdata('error')): ?>
   <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
   <?php endif; ?>
 
   <?= form_open_multipart('admin/tambah'); ?>
+  
   <div class="form-group mb-2">
    <label>Judul Promo</label>
    <input type="text" name="nama_flyer" class="form-control" required>
   </div>
+
+  <!-- ✅ Tambah Deskripsi -->
+  <div class="form-group mb-2">
+   <label>Deskripsi</label>
+   <textarea name="deskripsi" class="form-control" rows="4" required><?= set_value('deskripsi'); ?></textarea>
+  </div>
+  <!-- ✅ End Deskripsi -->
 
   <div class="form-group mb-2">
    <label>Kategori</label>
@@ -53,8 +61,10 @@
    </select>
   </div>
 
-  <button type="submit" class="btn btn-success">Simpan</button>
-  <a href="<?= site_url('admin'); ?>" class="btn btn-secondary">Batal</a>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-success">Simpan</button>
+    <a href="<?= site_url('admin'); ?>" class="btn btn-cancel">Batal</a>
+  </div>
   <?= form_close(); ?>
  </div>
 </body>

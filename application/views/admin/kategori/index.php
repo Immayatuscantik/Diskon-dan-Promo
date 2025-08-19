@@ -16,7 +16,7 @@
     <!-- Konten -->
     <div class="container">
         <h2>Kelola Kategori</h2>
-        <a href="<?= site_url('kategori/tambah'); ?>" class="btn btn-primary mb-3">+ Tambah</a>
+        <a href="<?= site_url('kategori/tambah'); ?>" class="btn btn-primary" style="margin-bottom:16px;display:inline-block;">+ Tambah</a>
 
         <?php if ($this->session->flashdata('error')): ?>
             <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
@@ -40,9 +40,16 @@
                             <td><?= $row->nama_kategori ?></td>
                             <td><?= $row->nomor_urut ?></td>
                             <td><?= $row->status; ?></td>
-                            <td>
-                                <a href="<?= site_url('kategori/edit/'.$row->id_kategori) ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="<?= site_url('kategori/hapus/'.$row->id_kategori) ?>" onclick="return confirm('Yakin ingin menghapus kategori ini?');" class="btn btn-danger btn-sm">Hapus</a>
+                            <td class="aksi-cell">
+                                <a href="<?= site_url('kategori/hapus/'.$row->id_kategori) ?>"
+                                   onclick="return confirm('Yakin ingin menghapus kategori ini?');"
+                                   class="aksi-btn">
+                                    <img src="<?= base_url('assets/icons/trash.png'); ?>" alt="Hapus" width="44" height="44">
+                                </a>
+                                <span class="aksi-separator"></span>
+                                <a href="<?= site_url('kategori/edit/'.$row->id_kategori) ?>" class="aksi-btn">
+                                    <img src="<?= base_url('assets/icons/edit.png'); ?>" alt="Edit" width="44" height="44">
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

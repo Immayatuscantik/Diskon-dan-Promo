@@ -22,9 +22,12 @@
     <?php if ($this->session->flashdata('error')): ?>
     <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
     <?php endif; ?>
-    <a href="<?= site_url('kategori'); ?>" class="btn btn-secondary">Batal</a>
+
+    <div class="form-actions">
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="<?= site_url('kategori'); ?>" class="btn btn-cancel">Batal</a>
+    </div>
     <br><br>
-  <button type="submit">Update</button>
  </form>
 </body>
 

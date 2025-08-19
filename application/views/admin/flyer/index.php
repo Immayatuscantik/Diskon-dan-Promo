@@ -8,14 +8,15 @@
 
 <body class="p-4">
     <div class="sidebar">
-    <ul>
-        <li><a href="<?= site_url('kategori'); ?>">Kategori</a></li>
-        <li><a href="<?= site_url('admin'); ?>" class="active">Promo</a></li>
-    </ul>
+        <ul>
+            <li><a href="<?= site_url('kategori'); ?>">Kategori</a></li>
+            <li><a href="<?= site_url('admin'); ?>" class="active">Promo</a></li>
+        </ul>
     </div>
+
     <div class="container">
         <h2>Kelola Promo dan Diskon</h2>
-        <a href="<?= site_url('admin/tambah'); ?>" class="btn btn-primary mb-3">+ Tambah</a>
+        <a href="<?= site_url('admin/tambah'); ?>" class="btn btn-primary" style="margin-bottom:16px;display:inline-block;">+ Tambah</a>
 
         <?php if ($this->session->flashdata('error')): ?>
             <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
@@ -26,6 +27,7 @@
                 <tr>
                     <th>No</th>
                     <th>Judul Promo</th>
+                    <th>Deskripsi</th> <!-- ✅ Tambah kolom deskripsi -->
                     <th>Kategori</th>
                     <th>Tanggal Mulai</th>
                     <th>Tanggal Akhir</th>
@@ -40,6 +42,7 @@
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $f->nama_flyer; ?></td>
+                            <td><?= $f->deskripsi; ?></td> <!-- ✅ tampilkan deskripsi -->
                             <td><?= $f->nama_kategori; ?></td>
                             <td><?= $f->tgl_mulai; ?></td>
                             <td><?= $f->tgl_selesai; ?></td>
@@ -51,20 +54,24 @@
                                     <span class="text-muted">Tidak ada gambar</span>
                                 <?php endif; ?>
                             </td>
-                            <td>
-                                <a href="<?= base_url('index.php/admin/edit/'.$f->id_flyer) ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="<?= base_url('index.php/admin/hapus/'.$f->id_flyer) ?>" onclick="return confirm('Yakin ingin menghapus promo ini?');" class="btn btn-danger btn-sm">Hapus</a>
+                            <td class="aksi-cell">
+                                <a href="<?= base_url('index.php/admin/hapus/'.$f->id_flyer) ?>" onclick="return confirm('Yakin ingin menghapus promo ini?');" class="aksi-btn">
+                                    <img src="<?= base_url('assets/icons/trash.png'); ?>" alt="Hapus" width="44" height="44">
+                                </a>
+                                <span class="aksi-separator"></span>
+                                <a href="<?= base_url('index.php/admin/edit/'.$f->id_flyer) ?>" class="aksi-btn">
+                                    <img src="<?= base_url('assets/icons/edit.png'); ?>" alt="Edit" width="44" height="44">
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="8" class="text-center">Tidak ada data flyer</td>
+                        <td colspan="9" class="text-center">Tidak ada data flyer</td> <!-- ✅ colspan jadi 9 -->
                     </tr>
                 <?php endif; ?>
             </tbody>
         </table>
     </div>
 </body>
-
 </html>

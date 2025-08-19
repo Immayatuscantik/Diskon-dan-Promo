@@ -1,37 +1,37 @@
 /* Wrapper Utama */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
+	font-family: "Poppins", sans-serif;
+	background-color: #f8f9fa;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px;
 }
 
 /* Card Container */
 .container {
-    background: #fff;
-    border-radius: 8px;
-    padding: 30px 40px;
-    max-width: 420px;
-    width: 100%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid #dcdcdc;
+	background: #fff;
+	border-radius: 8px;
+	padding: 30px 40px;
+	max-width: 420px;
+	width: 100%;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+	border: 1px solid #dcdcdc;
 }
 
 .container h2 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 20px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 18px;
+	margin-bottom: 20px;
 }
 
 /* Label & Input */
 label {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    display: block;
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 6px;
+	display: block;
 }
 
 input[type="text"],
@@ -39,70 +39,82 @@ input[type="date"],
 input[type="file"],
 select,
 textarea {
-    width: 100%;
-    padding: 8px 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
-    transition: border 0.2s;
+	width: 100%;
+	padding: 8px 10px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	outline: none;
+	transition: border 0.2s;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: #4CAF50;
+	border-color: #4caf50;
 }
 
 /* File Input Style */
 input[type="file"] {
-    padding: 4px;
+	padding: 4px;
 }
 
 /* Form Group */
 .form-group {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 /* Tombol */
 button,
 .btn {
-    border: none;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 6px;
-    cursor: pointer;
+	display: inline-block;
+	padding: 8px 16px;
+	font-size: 14px;
+	border-radius: 4px;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	transition: background 0.2s;
 }
 
 .btn-success {
-    background-color: #4CAF50;
-    color: white;
-    transition: background 0.2s;
+	background: #28a745;
+	color: #fff;
 }
 
 .btn-success:hover {
-    background-color: #45a049;
+	background-color: #45a049;
 }
 
 .btn-cancel {
-    background-color: #f2f2f2;
-    color: #333;
+	background-color: #f2f2f2;
+	color: #333;
+	text-decoration: none;
+	margin-left: 5px;
 }
 
 .btn-cancel:hover {
-    background-color: #ddd;
+	background-color: #ddd;
 }
 
 /* Alert Error */
 .alert {
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    margin-bottom: 15px;
+	padding: 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	margin-bottom: 15px;
 }
 
 .alert-danger {
-    background-color: #ffe6e6;
-    color: #d8000c;
+	background-color: #ffe6e6;
+	color: #d8000c;
+}
+
+/* Form Actions */
+.form-actions {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 10px;
+	align-items: center;
 }
