@@ -17,7 +17,6 @@
                      alt="<?= $k->nama_kategori ?>">
 
                 <h3><?= $k->nama_kategori; ?></h3>
-                <p>Klik untuk lihat promo</p>
                 <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>" class="btn">Lihat Promo</a>
             </div>
         <?php endforeach; ?>
