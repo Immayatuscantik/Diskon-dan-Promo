@@ -89,14 +89,17 @@
         }
         .promo-title {
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.5);
-            color: #fff;
-            font-size: 1.5rem;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5); /* overlay menutupi penuh */
+            color: #0c0c0cff;
+            font-size: 1.8rem;
             font-weight: bold;
-            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
