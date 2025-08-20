@@ -94,7 +94,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.5); /* overlay menutupi penuh */
-            color: #0c0c0cff;
+            color: #ffffffff;
             font-size: 1.8rem;
             font-weight: bold;
             display: flex;
