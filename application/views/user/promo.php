@@ -3,74 +3,152 @@
 <head>
     <title><?= $kategori->nama_kategori; ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets/promo.css'); ?>">
+    <style>
+        .header-bar {
+            display: flex;
+            justify-content: flex-end; /* geser ke kanan */
+            margin-bottom: 20px;
+        }
+        .btn-kembali {
+            display: inline-block;
+            background-color: #3366cc; /* warna background */
+            color: #fff; /* warna teks */
+            padding: 8px 16px; /* ruang dalam */
+            border-radius: 6px; /* sudut membulat */
+            font-size: 1.1rem;
+            text-decoration: none; /* hilangkan underline */
+            transition: background-color 0.3s;
+        }
+
+        .btn-kembali:hover {
+            background-color: #29a96fff; /* warna saat hover */
+            color: #fff;
+        }
+
+        body {
+            background: #f5f6fa;
+            font-family: 'Lato', Arial, sans-serif;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .swiper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+        .swiper-wrapper {
+            align-items: stretch;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .promo-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            width: 370px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            transition: box-shadow 0.2s;
+        }
+        .promo-card:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+        }
+        .promo-card img {
+            width: 95%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .promo-title {
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 20px 0 10px 0;
+            text-align: center;
+        }
+        .promo-desc {
+            color: #555;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .promo-footer {
+            margin-top: auto;
+        }
+        .promo-footer a {
+            color: #3366cc;
+            text-decoration: underline;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 1100px) {
+            .swiper {
+                max-width: 98vw;
+            }
+            .promo-card {
+                width: 95vw;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="container my-4">
-    <a href="<?= site_url('user'); ?>" class="btn btn-secondary mb-3">Kembali</a>
-    <h2 class="mb-4 text-center"><?= $kategori->nama_kategori; ?></h2>
-
-<div class="swiper-container promo-banner">
-    <div class="swiper-wrapper">
-        <?php foreach ($flyer as $item): ?>
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="<?= base_url('uploads/flyer/'.$item->gambar); ?>" 
-                     class="card-img-top" 
-                     alt="<?= $item->nama_flyer; ?>">
-                <div class="card-body text-center">
-                    <h5 class="card-title"><?= $item->nama_flyer; ?></h5>
-                </div>
-                <div class="card-footer text-center">
-                    <a href="<?= site_url('user/flyer/'.$item->id_flyer); ?>" class="btn btn-primary btn-sm">Detail</a>
-                </div>
-            </div>
-        </div>
-        <?php endforeach; ?>
+    <div class="container">
+    <div class="header-bar">
+        <a href="<?= site_url('user'); ?>" class="btn-kembali">Kembali</a>
     </div>
 
-    <div class="swiper-pagination"></div>
-</div>
+    <h2><?= $kategori->nama_kategori; ?></h2>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script>
-var swiper = new Swiper('.promo-banner', {
-    loop: true,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-    },
-    centeredSlides: true,
-    slidesPerView: 3, // hanya tampilkan 3 slide
-    spaceBetween: 30,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-    },
-    speed: 800
-});
-</script>
+        <!-- pakai class .swiper (versi terbaru Swiper.js) -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <?php foreach ($flyer as $item): ?>
+                <div class="swiper-slide">
+                    <div class="promo-card">
+                        <img src="<?= base_url('uploads/flyer/'.$item->gambar); ?>" alt="<?= $item->nama_flyer; ?>">
+                        <div class="promo-title"><?= $item->nama_flyer; ?></div>
+                        <div class="promo-desc"><?= !empty($item->deskripsi) ? $item->deskripsi : 'Tidak ada deskripsi'; ?></div>
+                        <div class="promo-footer">
+                            <a href="<?= site_url('user/flyer/'.$item->id_flyer); ?>">Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 
-
-<style>
-.swiper-slide {
-    width: 300px; /* lebar kartu */
-    opacity: 0.8;
-    transition: all 0.3s ease;
-}
-.swiper-slide-active {
-    opacity: 1;
-    transform: scale(1.05); /* membesarkan sedikit slide aktif */
-}
-.card {
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-.card img {
-    width: 90%;
-    height: 250px;
-    object-fit: cover;
-}
-</style>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 3,
+            spaceBetween: 40,
+            centeredSlides: true,
+            speed: 800,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            autoplay: {
+                delay: 3000, // auto geser tiap 3 detik
+                disableOnInteraction: false
+            }
+        });
+    </script>
+</body>
+</html>
