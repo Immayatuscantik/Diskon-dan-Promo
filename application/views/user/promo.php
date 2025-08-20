@@ -6,25 +6,39 @@
     <style>
         .header-bar {
             display: flex;
-            justify-content: flex-end; /* geser ke kanan */
-            margin-bottom: 20px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .header-col {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-left {
+            justify-content: flex-start;
+        }
+        .header-center {
+            justify-content: center;
+        }
+        .header-right {
+            justify-content: flex-end;
         }
         .btn-kembali {
             display: inline-block;
-            background-color: #3366cc; /* warna background */
-            color: #fff; /* warna teks */
-            padding: 8px 16px; /* ruang dalam */
-            border-radius: 6px; /* sudut membulat */
+            background-color: #3366cc;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 6px;
             font-size: 1.1rem;
-            text-decoration: none; /* hilangkan underline */
+            text-decoration: none;
             transition: background-color 0.3s;
         }
-
         .btn-kembali:hover {
-            background-color: #29a96fff; /* warna saat hover */
+            background-color: #29a96fff;
             color: #fff;
         }
-
         body {
             background: #f5f6fa;
             font-family: 'Lato', Arial, sans-serif;
@@ -35,10 +49,10 @@
             padding: 0 20px;
         }
         h2 {
-            font-size: 2.8rem;
+            font-size: 1.50rem;
             font-weight: bold;
+            margin: 0;
             text-align: center;
-            margin-bottom: 40px;
         }
         .swiper {
             max-width: 1200px;
@@ -106,11 +120,15 @@
 </head>
 <body>
     <div class="container">
-    <div class="header-bar">
-        <a href="<?= site_url('user'); ?>" class="btn-kembali">Kembali</a>
-    </div>
-
-    <h2><?= $kategori->nama_kategori; ?></h2>
+        <div class="header-bar">
+            <div class="header-col header-left"></div>
+            <div class="header-col header-center">
+                <h2><?= $kategori->nama_kategori; ?></h2>
+            </div>
+            <div class="header-col header-right">
+                <a href="<?= site_url('user'); ?>" class="btn-kembali">Kembali</a>
+            </div>
+        </div>
 
         <!-- pakai class .swiper (versi terbaru Swiper.js) -->
         <div class="swiper">
