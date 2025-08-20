@@ -5,10 +5,12 @@
     <link rel="stylesheet" href="<?= base_url('assets/flyer.css'); ?>">
 </head>
 <body>
-    <div class="container">
-        <a href="<?= site_url('user/promo/'.$id_kategori); ?>" class="btn">Kembali</a>
+<div class="container">
+    <div class="header">
         <h2><?= $flyer->nama_flyer; ?></h2>
-        <img src="<?= base_url('uploads/flyer/'.$flyer->gambar); ?>" alt="<?= $flyer->nama_flyer; ?>">
+        <a href="<?= site_url('user/promo/'.$id_kategori); ?>" class="btn">Kembali</a>
     </div>
+    <img src="<?= base_url('uploads/flyer/'.$flyer->gambar); ?>" alt="<?= $flyer->nama_flyer; ?>">
+</div>
 </body>
 </html>
