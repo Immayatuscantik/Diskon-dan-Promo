@@ -16,15 +16,10 @@
             align-items: center;
             justify-content: center;
         }
-        .header-left {
-            justify-content: flex-start;
-        }
-        .header-center {
-            justify-content: center;
-        }
-        .header-right {
-            justify-content: flex-end;
-        }
+        .header-left { justify-content: flex-start; }
+        .header-center { justify-content: center; }
+        .header-right { justify-content: flex-end; }
+
         .btn-kembali {
             display: inline-block;
             background-color: #3366cc;
@@ -36,9 +31,10 @@
             transition: background-color 0.3s;
         }
         .btn-kembali:hover {
-            background-color: #29a96fff;
+            background-color: #29a96f;
             color: #fff;
         }
+
         body {
             background: #f5f6fa;
             font-family: 'Lato', Arial, sans-serif;
@@ -54,8 +50,9 @@
             margin: 0;
             text-align: center;
         }
+
         .swiper {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding-bottom: 40px;
         }
@@ -67,54 +64,45 @@
             justify-content: center;
             align-items: stretch;
         }
+
         .promo-card {
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            width: 370px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            width: 420px;
+            height: 420px;
+            display: block;
+            position: relative;
+            overflow: hidden;
             transition: box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
         }
         .promo-card:hover {
             box-shadow: 0 8px 32px rgba(0,0,0,0.14);
         }
         .promo-card img {
-            width: 95%;
-            height: 260px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 6px;
-            margin-top: 20px;
+            display: block;
         }
         .promo-title {
-            font-size: 2rem;
-            font-weight: 400;
-            margin: 20px 0 10px 0;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 12px;
             text-align: center;
         }
-        .promo-desc {
-            color: #555;
-            font-size: 1.1rem;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .promo-footer {
-            margin-top: auto;
-        }
-        .promo-footer a {
-            color: #3366cc;
-            text-decoration: underline;
-            font-size: 1.1rem;
-        }
+
         @media (max-width: 1100px) {
-            .swiper {
-                max-width: 98vw;
-            }
-            .promo-card {
-                width: 95vw;
-            }
+            .swiper { max-width: 98vw; }
+            .promo-card { width: 95vw; height: 340px; }
         }
     </style>
 </head>
@@ -130,19 +118,14 @@
             </div>
         </div>
 
-        <!-- pakai class .swiper (versi terbaru Swiper.js) -->
         <div class="swiper">
             <div class="swiper-wrapper">
                 <?php foreach ($flyer as $item): ?>
                 <div class="swiper-slide">
-                    <div class="promo-card">
+                    <a href="<?= site_url('user/flyer/'.$item->id_flyer); ?>" class="promo-card">
                         <img src="<?= base_url('uploads/flyer/'.$item->gambar); ?>" alt="<?= $item->nama_flyer; ?>">
                         <div class="promo-title"><?= $item->nama_flyer; ?></div>
-                        <div class="promo-desc"><?= !empty($item->deskripsi) ? $item->deskripsi : 'Tidak ada deskripsi'; ?></div>
-                        <div class="promo-footer">
-                            <a href="<?= site_url('user/flyer/'.$item->id_flyer); ?>">Detail</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <?php endforeach; ?>
             </div>
@@ -163,7 +146,7 @@
                 clickable: true
             },
             autoplay: {
-                delay: 3000, // auto geser tiap 3 detik
+                delay: 3000,
                 disableOnInteraction: false
             }
         });
