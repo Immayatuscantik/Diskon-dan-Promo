@@ -6,7 +6,14 @@ class Kategori_model extends CI_Model {
 
     private $table = 'kategori';
 
+    // Untuk admin (semua kategori)
     public function get_all() {
+        return $this->db->get($this->table)->result();
+    }
+
+    // Untuk user (hanya kategori aktif)
+    public function get_all_active() {
+        $this->db->where('status', 'aktif'); // atau 1 kalau integer
         return $this->db->get($this->table)->result();
     }
 

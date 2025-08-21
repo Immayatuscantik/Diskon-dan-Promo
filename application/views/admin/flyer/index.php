@@ -46,7 +46,13 @@
                             <td><?= $f->nama_kategori; ?></td>
                             <td><?= $f->tgl_mulai; ?></td>
                             <td><?= $f->tgl_selesai; ?></td>
-                            <td><?= $f->status; ?></td>
+                            <td>
+                                <?php if ($f->status == 'aktif'): ?>
+                                    <span style="color:green;font-weight:bold;"> Aktif</span>
+                                <?php else: ?>
+                                    <span style="color:red;font-weight:bold;"> Tidak Aktif</span>
+                                <?php endif; ?>
+                            </td>
                             <td>
                                 <?php if (!empty($f->gambar)): ?>
                                     <img src="<?= base_url('uploads/flyer/' . $f->gambar); ?>" width="80">

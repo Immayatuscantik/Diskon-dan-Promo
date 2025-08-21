@@ -25,6 +25,7 @@ class User_model extends CI_Model {
         $this->db->from('flyer');
         $this->db->join('kategori', 'kategori.id_kategori = flyer.id_kategori');
         $this->db->where('flyer.id_kategori', $id_kategori);
+        $this->db->where('flyer.status', 'aktif'); // hanya ambil yang aktif
         return $this->db->get()->result();
     }
 
@@ -40,9 +41,10 @@ class User_model extends CI_Model {
         $this->db->select('gambar');
         $this->db->from('flyer');
         $this->db->where('id_kategori', $id_kategori);
-        $this->db->order_by('id_flyer', 'ASC'); // ambil flyer pertama
+        $this->db->where('status', 'aktif'); // hanya ambil yang aktif
+        $this->db->order_by('id_flyer', 'ASC');
         $this->db->limit(1);
         $result = $this->db->get()->row();
-        return $result ? $result->gambar : 'default.jpg'; // jika kosong pakai default
+        return $result ? $result->gambar : 'default.jpg';
     }
 }

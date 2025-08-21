@@ -10,11 +10,18 @@ class Kategori extends CI_Controller {
         $this->load->model('Kategori_model');
     }
 
-    // List semua kategori
+    // List semua kategori (admin bisa lihat aktif/nonaktif)
     public function index()
     {
         $data['kategori'] = $this->Kategori_model->get_all();
         $this->load->view('admin/kategori/index', $data);
+    }
+
+    // List kategori aktif untuk user (hanya status = aktif)
+    public function user_list()
+    {
+        $data['kategori'] = $this->Kategori_model->get_all_active();
+        $this->load->view('user/kategori/index', $data);
     }
 
     // Tambah kategori
@@ -23,8 +30,8 @@ class Kategori extends CI_Controller {
         if ($this->input->post()) {
             $data = [
                 'nama_kategori' => $this->input->post('nama_kategori'),
-                'nomor_urut' => $this->input->post('nomor_urut'),
-                'status'       => $this->input->post('status')
+                'nomor_urut'    => $this->input->post('nomor_urut'),
+                'status'        => $this->input->post('status')
             ];
             $this->Kategori_model->insert($data);
             redirect('kategori');
@@ -44,8 +51,8 @@ class Kategori extends CI_Controller {
         if ($this->input->post()) {
             $update_data = [
                 'nama_kategori' => $this->input->post('nama_kategori'),
-                'nomor_urut' => $this->input->post('nomor_urut'),
-                'status'       => $this->input->post('status')
+                'nomor_urut'    => $this->input->post('nomor_urut'),
+                'status'        => $this->input->post('status')
             ];
             $this->Kategori_model->update($id, $update_data);
             redirect('kategori');

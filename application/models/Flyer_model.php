@@ -6,11 +6,22 @@ class Flyer_model extends CI_Model {
 
     private $table = 'flyer';
 
+    // Semua flyer (untuk admin)
     public function get_all_flyer()
     {
-    $this->db->select('flyer.*, kategori.nama_kategori');
-    $this->db->from('flyer');
-    $this->db->join('kategori', 'kategori.id_kategori = flyer.id_kategori');
+        $this->db->select('flyer.*, kategori.nama_kategori');
+        $this->db->from('flyer');
+        $this->db->join('kategori', 'kategori.id_kategori = flyer.id_kategori');
+        return $this->db->get()->result();
+    }
+
+    // Hanya flyer aktif (untuk user)
+    public function get_all_active_flyer()
+    {
+        $this->db->select('flyer.*, kategori.nama_kategori');
+        $this->db->from('flyer');
+        $this->db->join('kategori', 'kategori.id_kategori = flyer.id_kategori');
+        $this->db->where('flyer.status', 'aktif'); // atau 1 kalau integer
         return $this->db->get()->result();
     }
 

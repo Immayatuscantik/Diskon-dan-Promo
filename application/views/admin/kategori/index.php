@@ -39,7 +39,13 @@
                             <td><?= $no++ ?></td>
                             <td><?= $row->nama_kategori ?></td>
                             <td><?= $row->nomor_urut ?></td>
-                            <td><?= $row->status; ?></td>
+                            <td>
+                                <?php if ($row->status == 'aktif'): ?>
+                                    <span style="color:green;font-weight:bold;"> Aktif</span>
+                                <?php else: ?>
+                                    <span style="color:red;font-weight:bold;"> Tidak Aktif</span>
+                                <?php endif; ?>
+                            </td>
                             <td class="aksi-cell">
                                 <a href="<?= site_url('kategori/hapus/'.$row->id_kategori) ?>"
                                    onclick="return confirm('Yakin ingin menghapus kategori ini?');"

@@ -11,15 +11,17 @@
 
     <!-- wrapper flex -->
     <div class="kategori-grid">
-        <?php foreach ($kategori as $k): ?>
+    <?php foreach ($kategori as $k): ?>
+        <?php if ($k->status == 'aktif'): ?> 
             <div class="card">
                 <img src="<?= base_url('uploads/flyer/'.$k->thumbnail) ?>" 
-                     alt="<?= $k->nama_kategori ?>">
+                    alt="<?= $k->nama_kategori ?>">
 
                 <h3><?= $k->nama_kategori; ?></h3>
                 <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>" class="btn">Lihat Promo</a>
             </div>
-        <?php endforeach; ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
     </div>
 </div>
 
