@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kategori</title>
+    <title>Diskon dan Promo</title>
     <link rel="stylesheet" href="<?= base_url('assets/kategori.css'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 

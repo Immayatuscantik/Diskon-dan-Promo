@@ -129,3 +129,17 @@ h2 {
 .card:nth-child(3n + 3) {
 	border-top: 6px solid #ff9800; /* oranye */
 }
+
+/* Responsive: grid jadi 2 kolom di mobile */
+@media (max-width: 600px) {
+    .kategori-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        justify-items: center;
+    }
+    .card {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
