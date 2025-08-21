@@ -3,7 +3,8 @@
 <head>
     <title><?= $flyer->nama_flyer; ?></title>
     <link rel="stylesheet" href="<?= base_url('assets/other.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/flyer.css'); ?>"> <!-- harus terakhir -->
+    <link rel="stylesheet" href="<?= base_url('assets/flyer.css'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="container">

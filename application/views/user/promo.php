@@ -43,7 +43,7 @@
         .container {
             max-width: 1300px;
             margin: 40px auto;
-            padding: 0 20px;
+            padding: 30px;
         }
         h2 {
             font-size: 1.50rem;

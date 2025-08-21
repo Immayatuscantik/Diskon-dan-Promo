@@ -1,63 +1,81 @@
 body {
-    background: #f5f6fa;
-    font-family: "Lato", Arial, sans-serif;
+	background: #f5f6fa;
+	font-family: "Lato", Arial, sans-serif;
 }
 
 .container {
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 0 20px;
+	max-width: 1300px;
+	margin: 40px auto;
+	padding: 0 20px;
 }
 
 .header {
-    display: flex;
-    justify-content: center;  /* judul tetap di tengah */
-    align-items: center;
-    margin-bottom: 40px;
-    width: 100%;
-    position: relative; /* supaya tombol absolute nempel ke header */
+	display: flex;
+	justify-content: center; /* judul tetap di tengah */
+	align-items: center;
+	margin-bottom: 40px;
+	width: 100%;
+	position: relative; /* supaya tombol absolute nempel ke header */
 }
 
 .header h2 {
-    flex: 1;
-    text-align: center; /* judul tetap di tengah */
-    margin: 0;
-    font-size: 1.5rem;
+	flex: 1;
+	text-align: center; /* judul tetap di tengah */
+	margin: 0;
+	font-size: 1.5rem;
 }
 
 img {
-    display: block;
-    margin: 10px auto 0;
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	display: block;
+	margin: 10px auto 0;
+	max-width: 400px; /* Ubah sesuai kebutuhan, misal 400px */
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background: #3366cc;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
+	display: inline-block;
+	padding: 8px 16px;
+	background: #3366cc;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 6px;
 }
 
 .btn:hover {
-    background: #4c718d;
+	background: #4c718d;
 }
 
 .container .header .btn-home {
-    position: absolute;
-    left: 20px!important;
-    top: 50%;
-    transform: translateY(-50%);
+	position: absolute;
+	left: 20px !important;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .container .header .btn-back {
-    position: absolute;
-    right: 20px!important;
-    top: 50%;
-    transform: translateY(-50%);
+	position: absolute;
+	right: 20px !important;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+	.container {
+		padding-top: 30px; /* Tambahkan jarak atas */
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+	img {
+		max-width: 98vw;
+		border-radius: 6px;
+	}
+	h2 {
+		font-size: 1.2rem;
+	}
+	.header {
+		margin-bottom: 24px;
+	}
 }

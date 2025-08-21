@@ -8,7 +8,7 @@
 <body>
 
 <div class="container">
-    <h2 style="text-align:center;">Kategori</h2>
+    <h2 style="text-align:center;">Diskon dan Promo</h2>
 
     <!-- wrapper flex -->
     <div class="kategori-grid">
