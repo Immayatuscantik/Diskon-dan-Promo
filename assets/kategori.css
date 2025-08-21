@@ -49,8 +49,8 @@ body {
 
 .container {
 	max-width: 1200px;
-	margin: auto;
-	padding: 30px;
+	margin: 40px auto;
+	padding: 40px 20px 40px 20px; /* tambah padding atas & bawah */
 	text-align: center;
 }
 
@@ -65,7 +65,7 @@ h2 {
 .kategori-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	gap: 25px;
+	gap: 32px; /* tambah gap antar card */
 	justify-items: center;
 }
 
@@ -132,11 +132,13 @@ h2 {
 
 /* Responsive: grid jadi 2 kolom di mobile */
 @media (max-width: 600px) {
+    .container {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
     .kategori-grid {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        justify-items: center;
+        gap: 20px;
     }
     .card {
         width: 95%;
