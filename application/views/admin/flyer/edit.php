@@ -21,13 +21,6 @@
    <input type="text" name="nama_flyer" class="form-control" value="<?= $flyer->nama_flyer; ?>" required>
   </div>
 
-  <!-- ✅ Tambah Deskripsi -->
-  <div class="form-group mb-2">
-   <label>Deskripsi</label>
-   <textarea name="deskripsi" class="form-control" rows="4" required><?= $flyer->deskripsi; ?></textarea>
-  </div>
-  <!-- ✅ End Deskripsi -->
-
   <div class="form-group mb-2">
    <label>Kategori</label>
    <select name="id_kategori" class="form-control" required>

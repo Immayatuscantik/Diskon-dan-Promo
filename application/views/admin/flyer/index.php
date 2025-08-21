@@ -27,7 +27,6 @@
                 <tr>
                     <th>No</th>
                     <th>Judul Promo</th>
-                    <th>Deskripsi</th> <!-- ✅ Tambah kolom deskripsi -->
                     <th>Kategori</th>
                     <th>Tanggal Mulai</th>
                     <th>Tanggal Akhir</th>
@@ -42,7 +41,6 @@
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $f->nama_flyer; ?></td>
-                            <td><?= $f->deskripsi; ?></td> <!-- ✅ tampilkan deskripsi -->
                             <td><?= $f->nama_kategori; ?></td>
                             <td><?= $f->tgl_mulai; ?></td>
                             <td><?= $f->tgl_selesai; ?></td>
