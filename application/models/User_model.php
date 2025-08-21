@@ -42,7 +42,7 @@ class User_model extends CI_Model {
         $this->db->from('flyer');
         $this->db->where('id_kategori', $id_kategori);
         $this->db->where('status', 'aktif'); // hanya ambil yang aktif
-        $this->db->order_by('id_flyer', 'ASC');
+        $this->db->order_by('id_flyer', 'DESC');
         $this->db->limit(1);
         $result = $this->db->get()->row();
         return $result ? $result->gambar : 'default.jpg';
