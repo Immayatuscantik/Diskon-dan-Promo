@@ -28,7 +28,7 @@ h2 {
 img {
 	display: block; /* biar bisa margin auto */
 	margin: 10px auto 0; /* tengah horizontal */
-	max-width: 600px;
+	max-width: 400px; /* Ubah sesuai kebutuhan, misal 400px */
 	width: 100%;
 	height: auto;
 	border-radius: 8px;
@@ -54,4 +54,22 @@ img {
 	top: 50%;
 	transform: translateY(-50%);
 	margin-left: auto; /* dorong tombol ke kanan */
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding-top: 32px; /* Tambahkan jarak atas */
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    img {
+        max-width: 90vw; /* lebih kecil di mobile */
+        border-radius: 6px;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    .header {
+        margin-bottom: 24px;
+    }
 }

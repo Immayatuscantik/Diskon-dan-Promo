@@ -3,6 +3,7 @@
 <head>
     <title><?= $kategori->nama_kategori; ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .header-bar {
             display: flex;
@@ -107,6 +108,19 @@
             .swiper { max-width: 98vw; }
             .promo-card { width: 95vw; height: 340px; }
         }
+
+        @media (max-width: 600px) {
+            .promo-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                justify-items: center;
+            }
+            .promo-card {
+                width: 95%;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -151,6 +165,18 @@
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false
+            },
+            breakpoints: {
+                0: { // untuk layar <=600px
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    centeredSlides: true
+                },
+                601: { // untuk layar >600px
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                    centeredSlides: true
+                }
             }
         });
     </script>
