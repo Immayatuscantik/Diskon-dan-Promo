@@ -2,15 +2,17 @@
 <html>
 <head>
     <title><?= $flyer->nama_flyer; ?></title>
-    <link rel="stylesheet" href="<?= base_url('assets/flyer.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/other.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/flyer.css'); ?>"> <!-- harus terakhir -->
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h2><?= $flyer->nama_flyer; ?></h2>
-        <a href="<?= site_url('user/promo/'.$id_kategori); ?>" class="btn">Kembali</a>
+    <div class="container">
+        <div class="header">
+            <a href="<?= site_url('user/'); ?>" class="btn btn-home">🏠 Home</a>
+            <h2><?= $flyer->nama_flyer; ?></h2>
+            <a href="<?= site_url('user/promo/'.$id_kategori); ?>" class="btn btn-back">Kembali</a>
+        </div>
+        <img src="<?= base_url('uploads/flyer/'.$flyer->gambar); ?>" alt="<?= $flyer->nama_flyer; ?>">
     </div>
-    <img src="<?= base_url('uploads/flyer/'.$flyer->gambar); ?>" alt="<?= $flyer->nama_flyer; ?>">
-</div>
 </body>
 </html>
