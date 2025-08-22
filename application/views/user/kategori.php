@@ -10,17 +10,14 @@
 <div class="container">
     <h2 style="text-align:center;">Diskon dan Promo</h2>
 
-    <!-- wrapper flex -->
     <div class="kategori-grid">
     <?php foreach ($kategori as $k): ?>
         <?php if ($k->status == 'aktif'): ?> 
-            <div class="card">
+            <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>" class="card">
                 <img src="<?= base_url('uploads/flyer/'.$k->thumbnail) ?>" 
                     alt="<?= $k->nama_kategori ?>">
-
                 <h3><?= $k->nama_kategori; ?></h3>
-                <a href="<?= site_url('user/promo/'.$k->id_kategori); ?>" class="btn">Lihat Promo</a>
-            </div>
+            </a>
         <?php endif; ?>
     <?php endforeach; ?>
     </div>

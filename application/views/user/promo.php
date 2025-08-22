@@ -3,6 +3,7 @@
 <head>
     <title><?= $kategori->nama_kategori; ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .header-bar {
@@ -22,22 +23,41 @@
         .header-right { justify-content: flex-end; }
 
         .btn-kembali {
-            display: inline-block;
-            background-color: #3366cc;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f5f6fa;
+            color: #fffefeff;
+            font-size: 18px;
             text-decoration: none;
             transition: background-color 0.3s;
         }
         .btn-kembali:hover {
             background-color: #29a96f;
-            color: #fff;
+        }
+        .btn-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            color: #000000ff;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn-icon:hover {
+            background: #29a96f;
+            color : #ffffffff;
         }
 
+
         body {
-            background: #f5f6fa;
+	        background: linear-gradient(135deg, #f5f5f5, #e8f5e9);
             font-family: 'Lato', Arial, sans-serif;
         }
         .container {
@@ -47,6 +67,7 @@
         }
         h2 {
             font-size: 1.50rem;
+            color: #2e7d32;;
             font-weight: bold;
             margin: 0;
             text-align: center;
@@ -131,7 +152,9 @@
                 <h2><?= $kategori->nama_kategori; ?></h2>
             </div>
             <div class="header-col header-right">
-                <a href="<?= site_url('user'); ?>" class="btn-kembali">Kembali</a>
+                <a href="<?= site_url('user'); ?>" class="btn-icon btn-kembali">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
             </div>
         </div>
 
