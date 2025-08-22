@@ -57,8 +57,40 @@
 
 
         body {
-	        background: linear-gradient(135deg, #f5f5f5, #e8f5e9);
-            font-family: 'Lato', Arial, sans-serif;
+        font-family: "Lato", Arial, sans-serif;
+        position: relative;        /* penting biar ::before/::after muncul */
+        min-height: 100vh;
+        margin: 0;
+        background: linear-gradient(120deg, #e8f5e9 0%, #c8e6c9 40%, #a5d6a7 100%);       /* warna dasar */
+        overflow-x: hidden;
+        }
+
+        /* Lingkaran hijau muda */
+        body::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: #81c784;
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: 0;   /* biar di belakang konten */
+        }
+
+        /* Lingkaran hijau tua */
+        body::after {
+            content: "";
+            position: absolute;
+            bottom: -150px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: #66bb6a;
+            border-radius: 50%;
+            opacity: 0.25;
+            z-index: 0;
         }
         .container {
             max-width: 1300px;
@@ -66,7 +98,7 @@
             padding: 30px;
         }
         h2 {
-            font-size: 1.50rem;
+            font-size: 1.8rem;
             color: #2e7d32;;
             font-weight: bold;
             margin: 0;
