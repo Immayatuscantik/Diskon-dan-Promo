@@ -148,6 +148,16 @@
                 margin: 0 auto;
             }
         }
+
+        footer {
+            text-align: center;
+            padding: 16px;
+            background: #c5eec7;
+            color: #000000;
+            font-size: 14px;
+            margin-top: 40px;
+            border-radius: 12px 12px 0 0;
+        }
     </style>
 </head>
 <body>
@@ -209,5 +219,10 @@
             }
         });
     </script>
+
+    <footer>
+    <p>© Copyright IT Team RSIS 2025. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>

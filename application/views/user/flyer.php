@@ -21,5 +21,10 @@
         </div>
         <img src="<?= base_url('uploads/flyer/'.$flyer->gambar); ?>" alt="<?= $flyer->nama_flyer; ?>">
     </div>
+
+    <footer>
+    <p>© Copyright IT Team RSIS 2025. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>

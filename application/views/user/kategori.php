@@ -4,12 +4,21 @@
     <title>Diskon dan Promo</title>
     <link rel="stylesheet" href="<?= base_url('assets/kategori.css'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <img src="<?= base_url('assets/icons/sakinah_logo.png'); ?>" class="logo" alt="Logo Sakinah Mart">
 </head>
 <body>
 
+<!-- Header -->
+<header class="header-bar">
+    <div class="header-left">
+        <img src="<?= base_url('assets/icons/sakinah_logo.png'); ?>" class="logo" alt="Logo Sakinah Mart">
+    </div>
+</header>
+
 <div class="container">
-    <h2 style="text-align:center;">Diskon dan Promo</h2>
+
+    <div class="header-right">
+        <h1>Diskon dan Promo</h1>
+    </div>
 
     <div class="kategori-grid">
     <?php foreach ($kategori as $k): ?>
@@ -23,6 +32,10 @@
     <?php endforeach; ?>
     </div>
 </div>
+
+<footer>
+    <p>© Copyright IT Team RSIS 2025. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>

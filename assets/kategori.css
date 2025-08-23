@@ -86,6 +86,7 @@ body {
 	background: linear-gradient(120deg, #e8f5e9 0%, #d7e7d7 40%, #daf2db 100%);
 	position: relative;
 	overflow-x: hidden;
+	padding-top: 100px; /* tinggi header */
 }
 
 .container {
@@ -102,13 +103,33 @@ h2 {
 	font-weight: 600;
 }
 
-.logo {
-	position: fixed;
-	top: 16px;
-	left: 16px;
-	width: 200px;
-	height: auto;
-	z-index: 1000;
+/* ========================= */
+/* Header */
+/* ========================= */
+.header-bar {
+	position: fixed; /* biar nempel di atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(120deg, #e8f5e9 0%, #d7e7d7 40%, #daf2db 100%);
+    padding: 16px 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000; /* biar selalu di atas elemen lain */
+}
+
+.header-bar .logo {
+	height: 65px;
+	width: auto;
+}
+
+.header-bar h1 {
+	font-size: 24px;
+	color: #c5eec7;
+	margin: 0;
+	font-weight: 600;
 }
 
 /* ========================= */
@@ -122,6 +143,12 @@ h2 {
 		gap: 60px;
 	}
 }
+@media (max-width: 1024px) {
+    .header-bar .logo {
+        height: 50px; /* kecilin logo */
+		width: auto;
+    }
+}
 
 /* Tablet portrait & HP semua ukuran */
 @media (max-width: 768px) {
@@ -131,6 +158,31 @@ h2 {
 	}
 	.card {
 		max-width: 100%;
+	}
+
+	.header-bar {
+		flex-direction: column;
+		text-align: center;
+	}
+	.header-bar h1 {
+		margin-top: 8px;
+		font-size: 20px;
+	}
+}
+@media (max-width: 768px) {
+    .header-bar {
+        flex-direction: column; /* biar logo & judul bisa turun */
+        justify-content: flex-start;
+		text-align: center;
+        padding: 12px;
+    }
+    .header-bar .logo {
+        height: 40px; /* makin kecil di HP */
+		width: auto;
+    }
+    .header-bar h1 {
+        font-size: 18px; /* judul ikut lebih kecil */
+        margin-bottom: 8px;
 	}
 }
 
@@ -143,4 +195,17 @@ h2 {
 	.card {
 		max-width: 100%;
 	}
+}
+
+/* ========================= */
+/* Footer */
+/* ========================= */
+footer {
+    text-align: center;
+    padding: 16px;
+    background: #c5eec7;
+    color: #000000;
+    font-size: 14px;
+    margin-top: 40px;
+    border-radius: 12px 12px 0 0;
 }
