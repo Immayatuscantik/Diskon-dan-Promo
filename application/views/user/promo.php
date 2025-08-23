@@ -39,20 +39,21 @@
             background-color: #29a96f;
         }
         .btn-icon {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            color: #000000ff;
-            font-size: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #93db94;
+            color: #004b01;
+            font-size: 18px;
             text-decoration: none;
-            transition: background 0.2s;
+            transition: background-color 0.3s;
         }
         .btn-icon:hover {
-            background: #29a96f;
-            color : #ffffffff;
+            background-color: #29a96f;
+            color: #fff;
         }
 
 
@@ -99,7 +100,7 @@
         }
         h2 {
             font-size: 1.8rem;
-            color: #2e7d32;;
+	        color: #006a02;
             font-weight: bold;
             margin: 0;
             text-align: center;

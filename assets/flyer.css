@@ -58,7 +58,7 @@ body::after {
 
 h2 {
 	flex: 1;
-	color: #29a96f;
+	color: #006a02;
 	font-weight: bold;
 	text-align: center;
 	margin: 0;
@@ -83,8 +83,8 @@ img {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	background-color: #f5f6fa;
-	color: #000000;
+	background-color: #93db94;
+	color: #004b01;
 	font-size: 18px;
 	text-decoration: none;
 	transition: background-color 0.3s;
