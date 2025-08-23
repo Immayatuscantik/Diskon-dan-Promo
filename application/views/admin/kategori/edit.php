@@ -15,6 +15,7 @@
   <input type="number" name="nomor_urut" value="<?= $kategori->nomor_urut ?>" required>
     <label>Status</label>
    <select name="status" class="form-control">
+    <option value="" disabled <?= empty($kategori->status) ? 'selected' : ''; ?>>-- Pilih Status --</option>
     <option value="Aktif" <?= ($kategori->status == 'Aktif') ? 'selected' : ''; ?>>Aktif</option>
     <option value="Tidak Aktif" <?= ($kategori->status == 'Tidak Aktif') ? 'selected' : ''; ?>>Tidak Aktif</option>
    </select>

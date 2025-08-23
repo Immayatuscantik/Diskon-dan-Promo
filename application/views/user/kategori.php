@@ -3,7 +3,8 @@
 <head>
     <title>Diskon dan Promo</title>
     <link rel="stylesheet" href="<?= base_url('assets/kategori.css'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <img src="<?= base_url('assets/icons/sakinah_logo.png'); ?>" class="logo" alt="Logo Sakinah Mart">
 </head>
 <body>
 

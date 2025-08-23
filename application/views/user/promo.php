@@ -45,8 +45,8 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #93db94;
-            color: #004b01;
+            background-color: #ade0adff;
+            color: #003f01ff;
             font-size: 18px;
             text-decoration: none;
             transition: background-color 0.3s;
@@ -62,37 +62,10 @@
         position: relative;        /* penting biar ::before/::after muncul */
         min-height: 100vh;
         margin: 0;
-        background: linear-gradient(120deg, #e8f5e9 0%, #c8e6c9 40%, #a5d6a7 100%);       /* warna dasar */
+         background: linear-gradient(120deg, #e8f5e9 0%, #d7e7d7 40%, #daf2db 100%);
         overflow-x: hidden;
         }
 
-        /* Lingkaran hijau muda */
-        body::before {
-            content: "";
-            position: absolute;
-            top: -100px;
-            left: -150px;
-            width: 600px;
-            height: 600px;
-            background: #81c784;
-            border-radius: 50%;
-            opacity: 0.3;
-            z-index: 0;   /* biar di belakang konten */
-        }
-
-        /* Lingkaran hijau tua */
-        body::after {
-            content: "";
-            position: absolute;
-            bottom: -150px;
-            right: -200px;
-            width: 700px;
-            height: 700px;
-            background: #66bb6a;
-            border-radius: 50%;
-            opacity: 0.25;
-            z-index: 0;
-        }
         .container {
             max-width: 1300px;
             margin: 40px auto;

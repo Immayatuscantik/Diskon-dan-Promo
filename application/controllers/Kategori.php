@@ -35,8 +35,10 @@ class Kategori extends CI_Controller {
     // Edit kategori
     public function edit($id)
     {
-        $data['kategori'] = $this->Kategori_model->get_by_id($id);
+        $data['kategori'] = $this->Kategori_model->get_by_id($id); //manggil funct untuk memngambil data berdasarkan id
 
+
+        //jika data tidak ada maka tampilkan 404
         if (!$data['kategori']) {
             show_404();
         }
@@ -45,13 +47,14 @@ class Kategori extends CI_Controller {
             $update_data = [
                 'nama_kategori' => $this->input->post('nama_kategori'),
                 'nomor_urut' => $this->input->post('nomor_urut'),
-                'status'       => $this->input->post('status')
+                'status' => $this->input->post('status')
             ];
+
             $this->Kategori_model->update($id, $update_data);
-            redirect('kategori');
+            redirect('kategori'); //redirect ke halaman kategori setelah update
         }
 
-        $this->load->view('admin/kategori/edit', $data);
+        $this->load->view('admin/kategori/edit', $data); //load view edit dan mengirim data kategori ke view
     }
 
     // Hapus kategori
