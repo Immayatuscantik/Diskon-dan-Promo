@@ -81,6 +81,36 @@ img {
 	top: 50%;
 	transform: translateY(-50%);
 }
+/* ========================= */
+/* Header */
+/* ========================= */
+/* Header */
+.header-bar {
+	position: fixed; /* biar nempel di atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, #e8f5e9 0%, #d7e7d7 40%, #daf2db 100%);
+    padding: 12px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000; /* biar selalu di atas elemen lain */
+}
+
+.header-bar .logo {
+    height: auto;
+    max-height: 65px;
+    max-width: 150px; /* batasi lebarnya */
+    object-fit: contain; /* biar proporsional */
+}
+
+.header-bar h1 {
+	font-size: 24px;
+	color: #c5eec7;
+	margin: 0;
+	font-weight: 600;
+}
 
 @media (max-width: 600px) {
 	.container {
@@ -97,6 +127,23 @@ img {
 	}
 	.header {
 		margin-bottom: 24px;
+	}
+}
+
+@media (max-width: 600px) {
+    .header-bar {
+        flex-direction: column; /* biar logo & judul bisa turun */
+        justify-content: flex-start;
+		text-align: center;
+        padding: 12px;
+    }
+    .header-bar .logo {
+        height: 40px; /* makin kecil di HP */
+		width: auto;
+    }
+    .header-bar h1 {
+        font-size: 18px; /* judul ikut lebih kecil */
+        margin-bottom: 8px;
 	}
 }
 

@@ -6,17 +6,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        .header-bar {
+        /* ========================= */
+        /* Header */
+        /* ========================= */
+        .header-top {
+            position: fixed; /* biar nempel di atas */
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            justify-content: flex-start;
+            background: linear-gradient(120deg, #e8f5e9 0%, #d7e7d7 40%, #daf2db 100%);
+            padding: 16px 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 1000; /* biar selalu di atas elemen lain */
         }
+
+        .header-top .logo {
+            max-height: 65px;
+            width: auto;
+            height: auto;
+        }
+
+        .header-bar h1 {
+            font-size: 24px;
+            color: #c5eec7;
+            margin: 0;
+            font-weight: 600;
+        }
+        
         .header-col {
-            flex: 1;
+            margin-top: 30px;  /* biar gak ketumpuk logo */
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            padding: 12px 20px;
         }
         .header-left { justify-content: flex-start; }
         .header-center { justify-content: center; }
@@ -72,7 +97,7 @@
             padding: 30px;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
 	        color: #006a02;
             font-weight: bold;
             margin: 0;
@@ -161,6 +186,12 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
+<header class="header-top">
+    <div class="header-left">
+        <img src="<?= base_url('assets/icons/sakinah_logo.png'); ?>" class="logo" alt="Logo Sakinah Mart">
+    </div>
+</header>
     <div class="container">
         <div class="header-bar">
             <div class="header-col header-left"></div>

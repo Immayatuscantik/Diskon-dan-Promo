@@ -9,6 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+
+<!-- Header -->
+<header class="header-bar">
+    <div class="header-left">
+        <img src="<?= base_url('assets/icons/sakinah_logo.png'); ?>" class="logo" alt="Logo Sakinah Mart">
+    </div>
+</header>
     <div class="container">
         <div class="header">
             <a href="<?= site_url('user/'); ?>" class="btn-icon btn-home">
